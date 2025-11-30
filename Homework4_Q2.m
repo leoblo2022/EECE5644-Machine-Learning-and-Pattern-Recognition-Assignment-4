@@ -44,7 +44,7 @@ avg_list = zeros(1,0);
 indices = makeFolds(size(f,1), Nfolds); % used helper function
 nSamples = d*length(f(:,1));
 
-for M = 10:15
+for M = 1:10
     fprintf("Testing GMM with %d components...\n", M);
     foldLL = zeros(K,1);
     nParams(1,M) = (M-1) + d*M + M*(d+nchoosek(d,2)); % from prof
@@ -146,4 +146,5 @@ function indices = makeFolds(N, K)
     end
 end
     
+
     
